@@ -1,1 +1,1 @@
-# Corrector
+# Curse Words
