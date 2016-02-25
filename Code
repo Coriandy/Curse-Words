@@ -1,0 +1,22 @@
+import urllib
+
+def simplecheck():
+
+#Put path of txt file in variable "text"
+   text = open("C:\...\Texto.txt")
+   contents = text.read()
+   text.close()
+   checkcurse(contents)
+
+def checkcurse(check_text):
+    conect = urllib.urlopen("http://www.wdyl.com/profanity?q=shot"+check_text)
+    outtext = conect.read()
+    conect.close()
+    if "true" in outtext:
+        print("Profanity Alert!!!")
+    elif "false" in outtext:
+        print("Text is good")
+    else:
+        print("Cannot scan file properly")
+    
+simplecheck()
